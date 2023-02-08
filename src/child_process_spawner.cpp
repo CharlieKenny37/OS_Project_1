@@ -63,7 +63,7 @@ int main(int argc, char* argv[])
 			case 0:
 				std::cout << "Running program test1 in process " << current_pid << std::endl;
 				current_pid = fork();
-				execlp("test_files/", "./test1", NULL);
+				execlp("./test_files/test1", "test1", NULL);
 
 				// if(current_pid==0) {
 				// 	exec("test_files/test1")
@@ -73,25 +73,25 @@ int main(int argc, char* argv[])
 			case 1: 
 				std::cout << "Running program test2 in process " << current_pid << std::endl;
 				//current_pid = fork();
-				execlp("test_files/", "./test2", NULL);
+				execlp("./test_files/test2", "test2", NULL);
 
 				break;
 			case 2: 
 				std::cout << "Running program test3 in process " << current_pid << std::endl;
 				//current_pid = fork();
-				execlp("test_files/", "./test3", NULL);
+				execlp("./test_files/test3", "test3", NULL);
 
 				break;
 			case 3: 
 				std::cout << "Running program test4 in process " << current_pid << std::endl;
 				//current_pid = fork();
-				execlp("test_files/", "./test4", NULL);
-
+				execlp("./test_files/test4", "test4", NULL);
+				std::cout << "::W:W:DADW:ADAW";
 				break;
 			case 4: 
 				std::cout << "Running program test5 in process " << current_pid << std::endl;
 				//current_pid = fork();
-				execlp("test_files/", "./test5", NULL);
+				execlp("./test_files/test5", "test5", NULL);
 
 				break;
 		}
