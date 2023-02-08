@@ -62,7 +62,7 @@ int main(int argc, char* argv[])
 			// TODO, launch the respective C file tasks
 			case 0:
 				std::cout << "Running program test1 in process " << current_pid << std::endl;
-				current_pid = fork();
+				// current_pid = fork();
 				execlp("./test_files/test1", "test1", NULL);
 
 				// if(current_pid==0) {
