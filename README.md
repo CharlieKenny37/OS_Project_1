@@ -1,36 +1,51 @@
-TODO
+# Data Structures Project 1 - by Charlie Kenny, Ryan Donald 2/13/2023
 
-# Data Structures Program - by Charlie Kenny 2/6/2023
-
-The data_structures_test.cpp program reads a file containing a list of newline delineated integers and stores the integers in three different data structures: a list, a queue, and a stack. The list is then sorted from smallest to largest, and the contents of all three data structures are printed to the screen.
+The child_process_spawner.cpp program creates five child processes, and each of these child processes then execute one of five test programs given to us. These programs are found in src/test_files/ and are named "test1.c", "test2.c", "test3.c", "test4.c", "test5.c".
 
 ## Compiling the Program
 To compile the program, unzip the program using an archive manager of your choosing, and then place the unzipped folder in a 
-directory of your choosing. Note before running the program, the g++ compiler, cmake, and make need to be installed on the linux system. Then inside of the build folder included inside of the project folder, run the following commands:
+directory of your choosing. Note before running the program, the g++ compiler, cmake, and make need to be installed on the linux system. Then inside of the build folder included inside of the project folder, run the following commands, in the following directories:
 
-    cmake ../src
+    In the src/ directory:
+    make
+    
+    In the src/test_files/ directory:
     make
 
-This will create the data_structures_test executable in the build directory.
+This will create the child_process_spawner executable in the src/ directory, as well as executables for each of the test programs in the src/test_files/ directory.
 
 ## Running the Program
-While still in the build directory, run the following following command:
+While still in the src/ directory, run the following following command:
 
-./data_structures_test <filename>
+./project1 <number of processes>
 
-Replace <filename> with the name of the file containing the list of integers. The file must be located in the same directory as the program.
+Replace <number of processes> with the desired number of child processes to be created in the program.
 
 ## Output
 
 The program will output the contents of the list, queue, and stack data structures to the screen. The example output for "file1.txt" is shown below.
 
-./data_structures_test file1.txt
+./project1 3
 
-QUEUE CONTENTS:
-48 10 57 30 -5 5 1 31 20 -9
-
-STACK CONTENTS:
--9 20 31 1 5 -5 30 57 10 48
-
-LIST CONTENTS:
--9 -5 1 5 10 20 30 31 48 57
+Parent pid is 49031
+Started child 1 with pid 49032
+Running program test3 in process 49032
+Started child 2 with pid 49033
+Running program test4 in process 49033
+Started child 3 with pid 49034
+Running program test5 in process 49034
+Running program test3 in process 49032
+T3: PID 49032 is even
+Running program test4 in process 49033
+T4: PID 49033 has 5 digits
+Child 1 (PID 49032) finished
+Running program test5 in process 49034
+T5: QS L[0-9]
+T5: QS L[0-3]
+T5: QS L[0-2]
+T5: QS L[5-9]
+T5: QS L[5-7]
+Child 2 (PID 49033) finished
+T5: QS L[5-6]
+T5: Final list = 1 2 3 4 5 6 7 8 9 10 
+Child 3 (PID 49034) finished

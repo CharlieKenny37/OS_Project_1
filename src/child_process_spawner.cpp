@@ -50,6 +50,7 @@ int main(int argc, char* argv[])
 		child_processes[current_pid] = loop + 1;
 	}
 	
+	// Checks if the current process is the child process, if so it gets the pid for the current (child) process
 	if(current_pid == 0)
 		current_pid = getpid();
 	
@@ -59,38 +60,38 @@ int main(int argc, char* argv[])
 		// operation on the current pid
 		switch(current_pid % 5)
 		{
-			// TODO, launch the respective C file tasks
 			case 0:
+				// prints out when program "test1" begins, and then executes test1 
+				// which is found in the relative path given to the execlp() call
 				std::cout << "Running program test1 in process " << current_pid << std::endl;
-				// current_pid = fork();
 				execlp("./test_files/test1", "test1", NULL);
-
-				// if(current_pid==0) {
-				// 	exec("test_files/test1")
-				// }
 
 				break;
 			case 1: 
+				// prints out when program "test2" begins, and then executes test1 
+				// which is found in the relative path given to the execlp() call
 				std::cout << "Running program test2 in process " << current_pid << std::endl;
-				//current_pid = fork();
 				execlp("./test_files/test2", "test2", NULL);
 
 				break;
 			case 2: 
+				// prints out when program "test2" begins, and then executes test1 
+				// which is found in the relative path given to the execlp() call
 				std::cout << "Running program test3 in process " << current_pid << std::endl;
-				//current_pid = fork();
 				execlp("./test_files/test3", "test3", NULL);
 
 				break;
 			case 3: 
+				// prints out when program "test3" begins, and then executes test1 
+				// which is found in the relative path given to the execlp() call
 				std::cout << "Running program test4 in process " << current_pid << std::endl;
-				//current_pid = fork();
 				execlp("./test_files/test4", "test4", NULL);
-				std::cout << "::W:W:DADW:ADAW";
+				
 				break;
 			case 4: 
+				// prints out when program "test5" begins, and then executes test1 
+				// which is found in the relative path given to the execlp() call
 				std::cout << "Running program test5 in process " << current_pid << std::endl;
-				//current_pid = fork();
 				execlp("./test_files/test5", "test5", NULL);
 
 				break;
